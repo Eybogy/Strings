@@ -6,11 +6,8 @@ public class Main {
         Scanner in = new Scanner(System.in);
         int x = in.nextInt();
         if (x == 1) {
-            System.out.println("Введите первое число");
-            int n1 = in.nextInt();
-            System.out.println("Введите второе число");
-            int n2 = in.nextInt();
-            //System.out.println(One.count(n1, n2));
+            One a = new One();
+            a.One();
         } else if (x == 2) {
             Two b = new Two();
             b.Two();
