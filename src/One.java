@@ -24,6 +24,6 @@ public class One {
                 }
             }
         }
-        System.out.println(All);
+        System.out.println("Слов, насинающихся на гласную:" +"\n" + All);
     }
 }
