@@ -12,11 +12,8 @@ public class Main {
             int n2 = in.nextInt();
             //System.out.println(One.count(n1, n2));
         } else if (x == 2) {
-            System.out.println("Введите первое число");
-            int a = in.nextInt();
-            System.out.println("Введите второе число");
-            int n = in.nextInt();
-            //System.out.println(Two.count(a, n));
+            Two b = new Two();
+            b.Two();
         } else if (x == 3) {
             Three c = new Three();
             c.Three();

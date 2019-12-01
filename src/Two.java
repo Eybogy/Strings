@@ -4,44 +4,34 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Two {
-    public class Length3 {
-        public static void main(String[] args){
-            Scanner in = new Scanner(System.in);
-            int check = 0;
-            int count = 1;
-            int schet = 0;
-            ArrayList<Integer> save = new ArrayList<>();
-            System.out.println("Ввод строки тут: ");
-            char[] a = in.nextLine().toCharArray();
-            for(int i = 0; i<a.length;i++){
-                String c = " ";
-                if(a[i] != c.charAt(0)){
-                    schet++;
-                }
-                else if(i+1 < a.length){
-                    if(a[i] == c.charAt(0) && a[i+1] != c.charAt(0)){
-                        count++;
-                        if(check++ == 0 && a[i-2] == c.charAt(0)){
-                            count--;
-                        }
-                        schet = 0;
-                    }
-                }
-                if(i+1 < a.length){
-                    if(schet == 3 && a[i+1] == c.charAt(0)){
-                        save.add(count);
-                    }
-                }
-                else if(i+1 == a.length){
-                    if(schet == 3){
-                        save.add(count);
-                    }
+    Scanner in = new Scanner(System.in);
+    int All = 1;
+    int length = 0;
+    String space = " ";
+    ArrayList<Integer> input = new ArrayList<>();
+    char[] a = in.nextLine().toCharArray();
+    public void Two(){
+        for(int i = 0; i<a.length-1; i++){
+            if (a[i] != space.charAt(0)){
+                length++;
+                if (length == 3 && a[i+1] == space.charAt(0)){
+                    input.add(All);
                 }
             }
-            System.out.println("Номера слов, длина которых равна 3: ");
-            for(int i = 0; i < save.size(); i++){
-                System.out.println(save.get(i));
+            if(a[i] == space.charAt(0)) {
+                length = 0;
+                All++;
             }
+        }
+        // проверка последних трёх знаков на вхождение
+        if (a[a.length-1] != space.charAt(0) && a[a.length-2] != space.charAt(0) && a[a.length-3] != space.charAt(0)){
+            if (a.length > 3 && a[a.length-4] == space.charAt(0)){
+                input.add(All);
+            }
+        }
+        System.out.println("Номера слов длины 3: ");
+        for(int i = 0; i < input.size(); i++){
+            System.out.println(input.get(i));
         }
     }
 }
