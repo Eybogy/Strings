@@ -8,13 +8,19 @@ public class Two {
     int All = 1;
     int length = 0;
     String space = " ";
+    ArrayList<Character> Array = new ArrayList<>();
     ArrayList<Integer> input = new ArrayList<>();
-    char[] a = in.nextLine().toCharArray();
     public void Two(){
-        for(int i = 0; i<a.length-1; i++){
-            if (a[i] != space.charAt(0)){
+        System.out.println("Введите строку");
+        char[] a = in.nextLine().toCharArray();
+        for (int i = 0; i < a.length; i++) {
+            Array.add(a[i]);
+        }
+        Array.add(space.charAt(0));
+        for(int i = 0; i<a.length; i++){
+            if (Array.get(i) != space.charAt(0)){
                 length++;
-                if (length == 3 && a[i+1] == space.charAt(0)){
+                if (length == 3 && Array.get(i+1) == space.charAt(0)){
                     input.add(All);
                 }
             }
@@ -23,15 +29,14 @@ public class Two {
                 All++;
             }
         }
-        // проверка последних трёх знаков на вхождение
-        if (a[a.length-1] != space.charAt(0) && a[a.length-2] != space.charAt(0) && a[a.length-3] != space.charAt(0)){
-            if (a.length > 3 && a[a.length-4] == space.charAt(0)){
-                input.add(All);
-            }
-        }
+
         System.out.println("Номера слов длины 3: ");
-        for(int i = 0; i < input.size(); i++){
-            System.out.println(input.get(i));
+        if (input.size() != 0){
+            for(int i = 0; i < input.size(); i++) {
+                System.out.println(input.get(i));
+            }
+        } else {
+            System.out.println("0");
         }
     }
 }
